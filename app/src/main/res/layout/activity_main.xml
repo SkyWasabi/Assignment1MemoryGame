@@ -36,7 +36,9 @@
                 android:paddingRight="5dp"
                 android:paddingBottom="5dp"
                 android:layout_weight="1"
-                android:id="@+id/grid11">
+                android:id="@+id/grid11"
+                android:clickable="true"
+                android:onClick="didSelectTile">
 
             </com.example.dakeh.assignment1memorygame.TileView>
 

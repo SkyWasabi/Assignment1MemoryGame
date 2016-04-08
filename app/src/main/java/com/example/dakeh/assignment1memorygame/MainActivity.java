@@ -4,6 +4,7 @@ package com.example.dakeh.assignment1memorygame;
 import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -23,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
         //Log.d("Check data", gm.toString());
 
         //Log.d("Display all identifier", gm.toString());
-
-
 
     }
 

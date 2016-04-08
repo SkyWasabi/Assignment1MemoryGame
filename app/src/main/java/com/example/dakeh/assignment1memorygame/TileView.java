@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -29,11 +30,21 @@ public class TileView extends LinearLayout implements TileInterface {
         imageView.setImageDrawable(res.getDrawable(R.drawable.question));
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         imageView.setClickable(true);
-
         addView(imageView);
+
+        imageView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                revealimg(imageView);
+            }
+        });
 
     }
 
+    public TileView(Context context)
+    {
+        super(context);
+    }
 
     public void revealimg(ImageView imgview) {
         Resources res = getResources();
@@ -49,14 +60,9 @@ public class TileView extends LinearLayout implements TileInterface {
         imgview.setImageAlpha(0);
     }
 
-
+    @Override
     public void didSelectTile(TileView tileView)
     {
-        tileView.imageView.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.v("Check", "Click");
-            }
-        });
+
     }
 }
