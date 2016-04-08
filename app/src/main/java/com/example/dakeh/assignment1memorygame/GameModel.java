@@ -2,6 +2,7 @@ package com.example.dakeh.assignment1memorygame;
 
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.widget.ImageView;
 
@@ -37,6 +38,7 @@ public class GameModel {
         int numberofpic = imgarray.length();
         int picindex = 0;
         int identifier = 0;
+        Drawable draw;
 
         String check = String.valueOf(numtiles);
         //Log.d("check: ", check);
@@ -48,12 +50,12 @@ public class GameModel {
                 picindex = 0;
             }
 
-            identifier = imgarray.getResourceId(picindex, 0);
+            draw = imgarray.getDrawable(picindex);
 
             //Log.d("check: ", String.valueOf(identifier));
 
-            td.add(new TileData(identifier, picindex));
-            td.add(new TileData(identifier, picindex));
+            td.add(new TileData(draw, picindex));
+            td.add(new TileData(draw, picindex));
             picindex++;
 
         }
