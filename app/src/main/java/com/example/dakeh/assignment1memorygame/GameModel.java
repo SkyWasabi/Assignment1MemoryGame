@@ -1,8 +1,11 @@
 package com.example.dakeh.assignment1memorygame;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.widget.ImageView;
 
@@ -20,24 +23,34 @@ import java.util.Random;
 
 public class GameModel {
 
+    public class TileData {
+        Drawable img;
+        int imgidentifier;
+
+        public TileData(Drawable d, int id) {
+            img = d;
+            imgidentifier = id;
+        }
+    }
+
     int indexlasttap;
     int indexsecondlasttap;
-    ArrayList<TileData> td = new ArrayList<TileData>();
+    ArrayList<TileData> tda = new ArrayList<TileData>();
     boolean firstorsecondturn;
     int matchedtiles;
     int matchscore;
-    Context context;
+    Activity activity;
 
 
-    public GameModel(int numtiles, TypedArray imgarray, Context context) {
-        this.context = context;
-        reset(numtiles, imgarray, context);
 
 
+    public GameModel(int numtiles, TypedArray imgarray, Activity activity) {
+        reset(numtiles, imgarray);
+        this.activity = activity;
 
     }
 
-    public void reset(int numtiles, TypedArray imgarray, Context context) {
+    public void reset(int numtiles, TypedArray imgarray) {
         indexlasttap = -1;
         indexsecondlasttap = -1;
         firstorsecondturn = false;
@@ -46,7 +59,7 @@ public class GameModel {
 
         int numberofpic = imgarray.length();
         int picindex = 0;
-        int identifier = 0;
+        Drawable draw;
 
         String check = String.valueOf(numtiles);
         //Log.d("check: ", check);
@@ -58,25 +71,23 @@ public class GameModel {
                 picindex = 0;
             }
 
-            identifier = imgarray.getResourceId(picindex, 0);
+            draw = imgarray.getDrawable(picindex);
 
-            //Log.d("check: ", String.valueOf(identifier));
-
-            td.add(new TileData(identifier, picindex, context));
-            td.add(new TileData(identifier, picindex, context));
+            tda.add(new TileData(draw, picindex));
+            tda.add(new TileData(draw, picindex));
             picindex++;
 
         }
 
-        Collections.shuffle(td);
+        Collections.shuffle(tda);
     }
 
     public String toString() {
         String id = " ";
 
-        for (int i = 0; i < td.size(); i++)
+        for (int i = 0; i < tda.size(); i++)
         {
-            id += td.get(i).imgidentifier + ", ";
+            id += tda.get(i).imgidentifier + ", ";
         }
 
         return id;

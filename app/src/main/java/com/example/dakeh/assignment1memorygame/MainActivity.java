@@ -5,22 +5,24 @@ import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements gameinterface{
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        int numtiles = 8;
+        int numtiles = 12;
         TypedArray imgar = getResources().obtainTypedArray(R.array.imgarr);
 
 
         GameModel gm = new GameModel(numtiles, imgar, this);
         //Log.d("Check data", gm.toString());
 
-        Log.d("Display all identifier", gm.toString());
+        //Log.d("Display all identifier", gm.toString());
 
 
 
@@ -45,4 +47,6 @@ public class MainActivity extends AppCompatActivity implements gameinterface{
     {
 
     }
+
+
 }
