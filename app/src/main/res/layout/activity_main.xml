@@ -1,22 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.dakeh.assignment1memorygame.MainActivity">
+    tools:context="com.example.dakeh.assignment1memorygame.MainActivity"
+    android:gravity="center_vertical"
+    android:weightSum="1"
+    android:orientation="horizontal"
+    android:layout_weight="1">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tile"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <com.example.dakeh.assignment1memorygame.TileView
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:background="@android:color/holo_blue_bright"
+                    android:src="@drawable/baldhill"
+                    android:scaleType="fitXY" />
+            </com.example.dakeh.assignment1memorygame.TileView>
+
+            <com.example.dakeh.assignment1memorygame.TileView
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:background="@android:color/holo_blue_bright"
+                    android:scaleType="fitXY"
+                    />
+            </com.example.dakeh.assignment1memorygame.TileView>
+
+            <com.example.dakeh.assignment1memorygame.TileView
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:background="@android:color/holo_blue_bright"
+                    android:scaleType="fitXY" />
+            </com.example.dakeh.assignment1memorygame.TileView>
+
+            <com.example.dakeh.assignment1memorygame.TileView
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:background="@android:color/holo_blue_bright"
+                    android:scaleType="fitXY" />
+            </com.example.dakeh.assignment1memorygame.TileView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <com.example.dakeh.assignment1memorygame.TileView
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:background="@android:color/holo_blue_bright"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/cathedral" />
+            </com.example.dakeh.assignment1memorygame.TileView>
+
+            <com.example.dakeh.assignment1memorygame.TileView
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:background="@android:color/holo_blue_bright"
+                    android:scaleType="fitXY" />
+            </com.example.dakeh.assignment1memorygame.TileView>
+
+            <com.example.dakeh.assignment1memorygame.TileView
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:background="@android:color/holo_blue_bright"
+                    android:scaleType="fitXY" />
+            </com.example.dakeh.assignment1memorygame.TileView>
+
+            <com.example.dakeh.assignment1memorygame.TileView
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:background="@android:color/holo_blue_bright"
+                    android:scaleType="fitXY" />
+            </com.example.dakeh.assignment1memorygame.TileView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <com.example.dakeh.assignment1memorygame.TileView
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:background="@android:color/holo_blue_bright"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/lake" />
+            </com.example.dakeh.assignment1memorygame.TileView>
+
+            <com.example.dakeh.assignment1memorygame.TileView
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:background="@android:color/holo_blue_bright"
+                    android:scaleType="fitXY" />
+            </com.example.dakeh.assignment1memorygame.TileView>
+
+            <com.example.dakeh.assignment1memorygame.TileView
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:background="@android:color/holo_blue_bright"
+                    android:scaleType="fitXY" />
+            </com.example.dakeh.assignment1memorygame.TileView>
+
+            <com.example.dakeh.assignment1memorygame.TileView
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:background="@android:color/holo_blue_bright"
+                    android:scaleType="fitXY" />
+            </com.example.dakeh.assignment1memorygame.TileView>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

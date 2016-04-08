@@ -1,5 +1,6 @@
 package com.example.dakeh.assignment1memorygame;
 
+import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.util.Log;
@@ -14,6 +15,9 @@ import java.util.Random;
 /**
  * Created by dakeh on 4/6/2016.
  */
+
+
+
 public class GameModel {
 
     int indexlasttap;
@@ -22,12 +26,18 @@ public class GameModel {
     boolean firstorsecondturn;
     int matchedtiles;
     int matchscore;
+    Context context;
 
-    public GameModel(int numtiles, TypedArray imgarray) {
-        reset(numtiles, imgarray);
+
+    public GameModel(int numtiles, TypedArray imgarray, Context context) {
+        this.context = context;
+        reset(numtiles, imgarray, context);
+
+
+
     }
 
-    public void reset(int numtiles, TypedArray imgarray) {
+    public void reset(int numtiles, TypedArray imgarray, Context context) {
         indexlasttap = -1;
         indexsecondlasttap = -1;
         firstorsecondturn = false;
@@ -52,8 +62,8 @@ public class GameModel {
 
             //Log.d("check: ", String.valueOf(identifier));
 
-            td.add(new TileData(identifier, picindex));
-            td.add(new TileData(identifier, picindex));
+            td.add(new TileData(identifier, picindex, context));
+            td.add(new TileData(identifier, picindex, context));
             picindex++;
 
         }

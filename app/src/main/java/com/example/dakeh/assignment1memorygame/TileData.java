@@ -1,32 +1,34 @@
 package com.example.dakeh.assignment1memorygame;
 
-import android.content.res.Resources;
-import android.support.v4.content.ContextCompat;
-import android.util.Log;
-import android.widget.ImageView;
 
-import java.util.ArrayList;
-import java.util.Objects;
+import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
+import android.support.v4.content.ContextCompat;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+
 
 /**
  * Created by dakeh on 4/6/2016.
  */
 
-public class TileData extends Object{
-    ImageView img;
+public class TileData{
+
+    Context context;
+    ImageView img = new ImageView(context);
     int imgidentifier;
 
-    public TileData(int imageid, int id) {
-        //img.setImageResource(imageid);
+    public TileData(int imageid, int id, Context context) {
+        this.context = context;
+        img.setImageResource(imageid);
         imgidentifier = id;
     }
 
     public void setimg(int imageid) {
         //img.setImageResource(imageid);
     }
-    public int getimageid() {
-        return img.getId();
-    }
+
 
     public void setidentifier(int identifier) {
         imgidentifier = identifier;
