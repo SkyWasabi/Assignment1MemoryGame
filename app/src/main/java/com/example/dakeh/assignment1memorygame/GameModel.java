@@ -40,6 +40,7 @@ public class GameModel {
     int matchedtiles;
     int matchscore;
     Activity activity;
+    public gameinterface mgameinterface;
 
 
 
@@ -58,15 +59,16 @@ public class GameModel {
         matchscore = 0;
 
         int numberofpic = imgarray.length();
+        Log.d("Check array length", String .valueOf(numberofpic));
         int picindex = 0;
         Drawable draw;
 
         String check = String.valueOf(numtiles);
         //Log.d("check: ", check);
 
-        for (int i = 0; i < numtiles/2; i++) {
+        for (int i = 0; i < numtiles; i++) {
 
-            if (picindex >= numberofpic)
+            if (picindex == numberofpic)
             {
                 picindex = 0;
             }
@@ -74,12 +76,16 @@ public class GameModel {
             draw = imgarray.getDrawable(picindex);
 
             tda.add(new TileData(draw, picindex));
-            tda.add(new TileData(draw, picindex));
             picindex++;
 
         }
 
         Collections.shuffle(tda);
+
+        for (int i = 0; i < numtiles; i++)
+        {
+            Log.d("Check pic index", String.valueOf(tda.get(i).imgidentifier));
+        }
     }
 
     public String toString() {
@@ -94,14 +100,47 @@ public class GameModel {
     }
 
     public void pushTileIndex(int tileindex) {
-        if (indexlasttap != -1)
+
+        if (firstorsecondturn == true)
         {
             indexsecondlasttap = indexlasttap;
+
         }
+
 
         indexlasttap = tileindex;
 
+        if (firstorsecondturn == true)
+        {
+            if (tda.get(indexlasttap).imgidentifier == tda.get(indexsecondlasttap).imgidentifier)
+            {
+                matchedtiles++;
+                matchscore = matchscore + 200;
+                mgameinterface.didMatchTile(this, indexlasttap, indexsecondlasttap);
+                mgameinterface.scoreDidUpdate(matchscore);
+            }
+            else
+            {
+                matchscore = matchscore - 100;
+                mgameinterface.didFailToMatch(indexlasttap, indexsecondlasttap);
+                mgameinterface.scoreDidUpdate(matchscore);
+            }
+            firstorsecondturn = false;
+            indexlasttap = -1;
+            indexsecondlasttap = -1;
+            mgameinterface.gameDidComplete(this, matchscore);
 
+        }
+
+        else
+        {
+            firstorsecondturn = true;
+        }
+
+    }
+
+    public int getscore() {
+        return matchscore;
     }
 
 

@@ -10,7 +10,7 @@
     tools:context="com.example.dakeh.assignment1memorygame.MainActivity"
     android:gravity="center_vertical"
     android:weightSum="1"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_weight="1">
 
 
@@ -19,14 +19,14 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:layout_weight="1"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_gravity="center">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical" >
+            android:orientation="horizontal" >
 
             <com.example.dakeh.assignment1memorygame.TileView
                 android:orientation="vertical"
@@ -47,7 +47,8 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:paddingBottom="5dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/grid12">
 
             </com.example.dakeh.assignment1memorygame.TileView>
 
@@ -58,7 +59,8 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:paddingBottom="5dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/grid13">
 
             </com.example.dakeh.assignment1memorygame.TileView>
 
@@ -69,7 +71,8 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:paddingBottom="5dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/grid14">
 
             </com.example.dakeh.assignment1memorygame.TileView>
         </LinearLayout>
@@ -78,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical" >
+            android:orientation="horizontal" >
 
             <com.example.dakeh.assignment1memorygame.TileView
                 android:orientation="vertical"
@@ -87,7 +90,8 @@
                 android:paddingBottom="5dp"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/grid21">
 
             </com.example.dakeh.assignment1memorygame.TileView>
 
@@ -98,7 +102,8 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:paddingBottom="5dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/grid22">
 
             </com.example.dakeh.assignment1memorygame.TileView>
 
@@ -109,7 +114,8 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:paddingBottom="5dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/grid23">
 
             </com.example.dakeh.assignment1memorygame.TileView>
 
@@ -120,7 +126,8 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:paddingBottom="5dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/grid24">
 
             </com.example.dakeh.assignment1memorygame.TileView>
         </LinearLayout>
@@ -129,7 +136,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical" >
+            android:orientation="horizontal" >
 
             <com.example.dakeh.assignment1memorygame.TileView
                 android:orientation="vertical"
@@ -138,7 +145,8 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:paddingBottom="5dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/grid31">
 
             </com.example.dakeh.assignment1memorygame.TileView>
 
@@ -149,7 +157,8 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:paddingBottom="5dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/grid32">
 
             </com.example.dakeh.assignment1memorygame.TileView>
 
@@ -160,7 +169,8 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:paddingBottom="5dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/grid33">
 
             </com.example.dakeh.assignment1memorygame.TileView>
 
@@ -171,9 +181,26 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:paddingBottom="5dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/grid34">
 
             </com.example.dakeh.assignment1memorygame.TileView>
         </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:id="@+id/score"
+            android:text="0 points"
+            android:textColor="@android:color/black"/>
+
     </LinearLayout>
 </LinearLayout>

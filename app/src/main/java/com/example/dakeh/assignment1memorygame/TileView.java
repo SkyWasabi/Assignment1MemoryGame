@@ -3,6 +3,7 @@ package com.example.dakeh.assignment1memorygame;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -16,8 +17,11 @@ import android.widget.Toast;
 /**
  * Created by dakeh on 4/8/2016.
  */
-public class TileView extends LinearLayout implements TileInterface {
+public class TileView extends LinearLayout implements View.OnClickListener {
+    Drawable image;
     ImageView imageView;
+    int tileindex;
+    public TileInterface mTileInterface;
 
     public TileView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -25,19 +29,27 @@ public class TileView extends LinearLayout implements TileInterface {
         imageView = new ImageView(context);
         imageView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 250));
         Resources res = getResources();
-        imageView.setBackgroundColor(Color.GREEN);
+        imageView.setBackgroundColor(Color.WHITE);
         imageView.setImageDrawable(res.getDrawable(R.drawable.question));
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         imageView.setClickable(true);
+
+        imageView.setOnClickListener(this);
+
+
+
 
         addView(imageView);
 
     }
 
+    public TileView(Context context) {
+        super(context);
+    }
 
     public void revealimg(ImageView imgview) {
-        Resources res = getResources();
-        imgview.setImageDrawable(res.getDrawable(R.drawable.lake));
+        imgview.setImageDrawable(image);
+
     }
 
     public void coverimg(ImageView imgview) {
@@ -49,14 +61,9 @@ public class TileView extends LinearLayout implements TileInterface {
         imgview.setImageAlpha(0);
     }
 
+    @Override
+    public void onClick(View v) {
 
-    public void didSelectTile(TileView tileView)
-    {
-        tileView.imageView.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.v("Check", "Click");
-            }
-        });
+        mTileInterface.didSelectTile(this);
     }
 }
